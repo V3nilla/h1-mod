@@ -1,24 +1,10 @@
-game:addlocalizedstring("LUA_MENU_LANGUAGE_BUTTON", "Language")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_BUTTON_DESC", "Change your game language.")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_POPUP_RESTART_REQUIRED_TITLE", "RESTART REQUIRED")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_POPUP_RESTART_REQUIRED_TEXT",
     "WARNING: To work properly, you need to have your language's zone files in the zone directory of your game root.\n\nYou have changed your game language, do you wish to restart?")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_POPUP_NO_ZONE_FOUND_TITLE", "LANGUAGE NOT FOUND")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_POPUP_NO_ZONE_FOUND_TEXT",
     "We are unable to find the language folder you have selected. To avoid bugs, we will not change anything.")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_ENGLISH", "English")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_FRENCH", "French")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_ITALIAN", "Italian")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_GERMAN", "German")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_SPANISH", "Spanish")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_JAPANESE_PARTIAL", "Japanese")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_KOREAN", "Korean")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_POLISH", "Polish")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_PORTUGUESE", "Portuguese")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_RUSSIAN", "Russian")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_SIMPLIFIED_CHINESE", "Simplified Chinese")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_TRADITIONAL_CHINESE", "Traditional Chinese")
-game:addlocalizedstring("LUA_MENU_LANGUAGE_LANG_ENGLISH_SAFE", "Arabic")
+game:addlocalizedstring("MENU_ENGLISH_SAFE", "Arabic")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_EASTER_EGG_NAME", "Jok \"Llama\" Arwent")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_EASTER_EGG_RANK", "H1-MOD Contributor")
 game:addlocalizedstring("LUA_MENU_LANGUAGE_EASTER_EGG_LOCATION", "Location: UNDISCLOSED")
@@ -81,7 +67,7 @@ get_current_language()
 
 LUI.addmenubutton("pc_controls", {
     index = 4,
-    text = Engine.Localize("LUA_MENU_LANGUAGE_BUTTON"),
+    text = Engine.Localize("MENU_LANGUAGE"),
     description = Engine.Localize("LUA_MENU_LANGUAGE_BUTTON_DESC"),
     callback = function()
         LUI.FlowManager.RequestAddMenu(nil, "language_menu")
@@ -93,7 +79,7 @@ LUI.MenuBuilder.registerType("language_menu", function(unk1)
 
     if Engine.InFrontend() and Engine.IsMultiplayer() then
         menu = LUI.MenuTemplate.new(unk1, {
-            menu_title = Engine.ToUpperCase(Engine.Localize("LUA_MENU_LANGUAGE_BUTTON")),
+            menu_title = Engine.ToUpperCase(Engine.Localize("MENU_LANGUAGE")),
             exclusiveController = 0,
             persistentBackground = PersistentBackground.Variants.Depot
         })
@@ -104,17 +90,17 @@ LUI.MenuBuilder.registerType("language_menu", function(unk1)
         end
     else
         menu = LUI.MenuTemplate.new(unk1, {
-            menu_title = Engine.ToUpperCase(Engine.Localize("LUA_MENU_LANGUAGE_BUTTON")),
+            menu_title = Engine.ToUpperCase(Engine.Localize("MENU_LANGUAGE")),
             exclusiveController = 0
         })
     end
 
     for i = 1, #available_languages do
         if does_zone_folder_exists(available_languages[i]) then
-            menu:AddButton(Engine.Localize(string.format("LUA_MENU_LANGUAGE_LANG_%s",
+            menu:AddButton(Engine.Localize(string.format("MENU_%s",
                 Engine.ToUpperCase(available_languages[i]))), function()
                 LUI.yesnopopup({
-                    title = Engine.Localize("LUA_MENU_LANGUAGE_POPUP_RESTART_REQUIRED_TITLE"),
+                    title = Engine.Localize("MENU_CCS_RESTART_CONFIRMATION_TITLE"),
                     text = Engine.Localize("LUA_MENU_LANGUAGE_POPUP_RESTART_REQUIRED_TEXT"),
                     callback = function(result)
                         if (result) then
