@@ -5,7 +5,6 @@ end
 updatecancelled = false
 updater.cancelupdate()
 
-game:addlocalizedstring("UPDATER_POPUP_ERROR", "Error:")
 game:addlocalizedstring("UPDATER_POPUP_NO_UPDATES_AVAILABLE", "No updates available")
 game:addlocalizedstring("UPDATER_POPUP_AVAILABLE_UPDATE_TEXT", "An update is available, proceed with installation?")
 game:addlocalizedstring("UPDATER_POPUP_SUCCESSFUL", "Update successful")
@@ -19,7 +18,7 @@ function startupdatecheck(popup, autoclose)
 		end
 
 		if (not updater.getupdatecheckstatus()) then
-			popup.text:setText(Engine.Localize("UPDATER_POPUP_ERROR") .. " " .. updater.getlasterror())
+			popup.text:setText(Engine.Localize("@MENU_ERROR") .. ": " .. updater.getlasterror())
 			return
 		end
 
@@ -73,7 +72,7 @@ function startupdatedownload(popup, autoclose)
 		end
 
 		if (not updater.getupdatedownloadstatus()) then
-			popup.text:setText(Engine.Localize("UPDATER_POPUP_ERROR") .. " " .. updater.getlasterror())
+			popup.text:setText(Engine.Localize("@MENU_ERROR") .. ": " .. updater.getlasterror())
 			return
 		end
 
