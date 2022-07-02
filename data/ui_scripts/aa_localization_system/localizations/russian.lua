@@ -3,15 +3,10 @@
 localizations["LUA_MENU_MULTIPLAYER_CAPS"] = "H1-MOD: СЕТЕВАЯ ИГРА\n"
 localizations["MENU_MULTIPLAYER_CAPS"] = "H1-MOD: СЕТЕВАЯ ИГРА"
 -- updater
-localizations["UPDATER_POPUP_ERROR"] = "Ошибка:"
 localizations["UPDATER_POPUP_NO_UPDATES_AVAILABLE"] = "У вас установлены все последние обновления"
-localizations["UPDATER_POPUP_AVAILABLE_UPDATE_TITLE"] = "ВНИМАНИЕ"
 localizations["UPDATER_POPUP_AVAILABLE_UPDATE_TEXT"] = "Доступно обновление клиента игры,\nначать установку сейчас?"
-localizations["UPDATER_POPUP_DOWNLOADING_FILE"] = "Скачивание"
 localizations["UPDATER_POPUP_SUCESSFUL"] = "Обновление завершено"
-localizations["UPDATER_POPUP_RESTART_POPUP_TITLE"] = "ТРЕБУЕТСЯ ПЕРЕЗАПУСК"
 localizations["UPDATER_POPUP_RESTART_POPUP_TEXT"] = "Для применения изменений необходим перезапуск игры"
-localizations["UPDATER_POPUP_RESTART_POPUP_BUTTON"] = "ПЕРЕЗАПУСТИТЬ"
 localizations["UPDATER_POPUP_CHECKING_FOR_UPDATES"] = "Проверка наличия обновлений..."
 -- hud_info/settings.lua
 localizations["LUA_MENU_FPS"] = "Счетчик кадров"

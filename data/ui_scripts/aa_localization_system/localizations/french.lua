@@ -3,15 +3,10 @@
 localizations["LUA_MENU_MULTIPLAYER_CAPS"] = "H1-MOD: MULTIJOUEUR\n"
 localizations["MENU_MULTIPLAYER_CAPS"] = "H1-MOD: MULTIJOUEUR\n"
 -- updater
-localizations["UPDATER_POPUP_ERROR"] = "Erreur:"
 localizations["UPDATER_POPUP_NO_UPDATES_AVAILABLE"] = "Aucune mise à jour disponible"
-localizations["UPDATER_POPUP_AVAILABLE_UPDATE_TITLE"] = "REMARQUE"
 localizations["UPDATER_POPUP_AVAILABLE_UPDATE_TEXT"] = "Une mise à jour est disponible,\npoursuivre l'installation ?"
-localizations["UPDATER_POPUP_DOWNLOADING_FILE"] = "Téléchargement du fichier"
 localizations["UPDATER_POPUP_SUCESSFUL"] = "Mise à jour réussie"
-localizations["UPDATER_POPUP_RESTART_POPUP_TITLE"] = "REDÉMARRAGE REQUIS"
 localizations["UPDATER_POPUP_RESTART_POPUP_TEXT"] = "La mise à jour nécessite un redémarrage"
-localizations["UPDATER_POPUP_RESTART_POPUP_BUTTON"] = "REDÉMARRER"
 localizations["UPDATER_POPUP_CHECKING_FOR_UPDATES"] = "Vérification des mises à jour..."
 -- hud_info/settings.lua
 localizations["LUA_MENU_FPS"] = "Compteur d'IPS"

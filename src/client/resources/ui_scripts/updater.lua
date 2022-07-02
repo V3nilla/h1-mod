@@ -7,13 +7,9 @@ updater.cancelupdate()
 
 game:addlocalizedstring("UPDATER_POPUP_ERROR", "Error:")
 game:addlocalizedstring("UPDATER_POPUP_NO_UPDATES_AVAILABLE", "No updates available")
-game:addlocalizedstring("UPDATER_POPUP_AVAILABLE_UPDATE_TITLE", "NOTICE")
 game:addlocalizedstring("UPDATER_POPUP_AVAILABLE_UPDATE_TEXT", "An update is available, proceed with installation?")
-game:addlocalizedstring("UPDATER_POPUP_DOWNLOADING_FILE", "Downloading file")
-game:addlocalizedstring("UPDATER_POPUP_SUCESSFUL", "Update successful")
-game:addlocalizedstring("UPDATER_POPUP_RESTART_POPUP_TITLE", "RESTART REQUIRED")
+game:addlocalizedstring("UPDATER_POPUP_SUCCESSFUL", "Update successful")
 game:addlocalizedstring("UPDATER_POPUP_RESTART_POPUP_TEXT", "Update requires restart")
-game:addlocalizedstring("UPDATER_POPUP_RESTART_POPUP_BUTTON", "RESTART")
 game:addlocalizedstring("UPDATER_POPUP_CHECKING_FOR_UPDATES", "Checking for updates...")
 
 function startupdatecheck(popup, autoclose)
@@ -38,7 +34,7 @@ function startupdatecheck(popup, autoclose)
 		end
 
 		LUI.yesnopopup({
-			title = Engine.Localize("UPDATER_POPUP_AVAILABLE_UPDATE_TITLE"),
+			title = Engine.Localize("@MENU_NOTICE"),
 			text = Engine.Localize("UPDATER_POPUP_AVAILABLE_UPDATE_TEXT"),
 			callback = function(result)
 				if (result) then
@@ -66,7 +62,7 @@ function startupdatedownload(popup, autoclose)
 		end
 
 		file = previousfile
-		popup.text:setText(Engine.Localize("UPDATER_POPUP_DOWNLOADING_FILE") .. " " .. updater.getcurrentfile() .. "...")
+		popup.text:setText(Engine.Localize("@EXE_DOWNLOADING") .. " " .. updater.getcurrentfile() .. "...")
 	end)
 
 	Engine.GetLuiRoot():registerEventHandler("update_done", function(element, event)
@@ -81,13 +77,13 @@ function startupdatedownload(popup, autoclose)
 			return
 		end
 
-		popup.text:setText(Engine.Localize("UPDATER_POPUP_SUCESSFUL"))
+		popup.text:setText(Engine.Localize("UPDATER_POPUP_SUCCESSFUL"))
 
 		if (updater.isrestartrequired()) then
 			LUI.confirmationpopup({
-				title = Engine.Localize("UPDATER_POPUP_RESTART_POPUP_TITLE"),
+				title = Engine.Localize("@MENU_CCS_RESTART_CONFIRMATION_TITLE"),
 				text = Engine.Localize("UPDATER_POPUP_RESTART_POPUP_TEXT"),
-				buttontext = Engine.Localize("UPDATER_POPUP_RESTART_POPUP_BUTTON"),
+				buttontext = Engine.Localize("@MENU_CCS_RESTART_BUTTON_LABEL"),
 				callback = function()
 					updater.relaunch()
 				end
